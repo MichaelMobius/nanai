@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mi primer poema</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <!--<script src="p5.js"></script>-->
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="1920px" height="1080px"></canvas>
+
+    <div id="container"></div>
+    <script>
+      let a = 0;
+      let sketch = function(p1) {
+        p1.setup = function() {
+          p1.createCanvas(p1.windowWidth, p1.windowHeight);
+          p1.background(0);
+          s1.init({ src: miP1.canvas });
+        }
+
+        p1.draw = function() {
+          a += 0.008;
+          p1.fill(255);
+          p1.clear();
+          p1.textSize(90 + p1.sin(a/2) * 35);
+          p1.text("m i   p r i m e r   p o e m a", p1.width /6, (p1.height / 3) * 1.2);
+        }
+      };
+
+      let miP1 = new p5(sketch, window.document.getElementById("container"));
+    </script>
+    <p>
+       <a id="texto1" href="../../mi-primer-poema-intro/index.html">El primer poema <br>
+        que escribí cuando era chico<br>tenía rima, por ejemplo <br> como todo buen primer poema</a>
+    
+    </p>  
+    
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      });
+
+      document.getElementById("container").style.visibility = "hidden";
+
+      osc(3, 0.5, 1)
+        .rotate(() => Math.sin(time / 65) % 360, -0.25)
+        .modulate(noise(20).modulate(o0, 0.42))
+        .modulate(o0, 0.007)
+        .diff(src(o0).thresh(0.019))
+        .modulate(src(o2).modulate(o0),.3)
+        .add(
+          src(o1)
+            .saturate(0.4)
+            .mult(o0)
+            .modulate(o0,.0005)
+        )
+        .out()
+        speed = 0.3
+      
+        src(s1) 
+          .modulatePixelate(voronoi(500),600,26)
+          .blend(src(o1).scrollY(-.0071))
+        .out(o1)
+      
+        src(s2)
+          .color(.5,.8,.6)
+          .posterize(100,20)
+          .contrast(5)
+          .thresh(.5)
+        .out(o2)
+    render(o0)
+    </script>
+  </body>
+</html>

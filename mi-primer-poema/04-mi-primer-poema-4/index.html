@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
+
+    <title>미 프라이머 포메아</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <!-- P5JS LIBRERIA -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title"><center>미 프라이머 포메아</center></h1>
+
+    
+        <div class="instructions">
+          <h2>
+            <a href="../05-mi-primer-poema-5/index.html">
+              <font color="blue">
+              mi primer poema<br>
+              como todo buen poema<br>
+              no fue un poema en realidad<br>
+              sino una conversación incómoda<br>
+              con un padre que hablaba del amor<br>
+              sin conocerle sin atreverse siquiera<br>
+              a mirarle el fondo de los ojos<br>
+              a esa bestia púrpura <br>
+              de lágrimas y vísceras<br>
+              que baila con nerviosismo <br> y esperanza
+              </font>
+            </a>
+          </h2>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+          <!-- <a href="/1uno.html"> sigueinte 1</a> -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      });
+
+shape(1.507, 0.022)
+	.mult(voronoi(1000, 3.089)
+		.blend(o0)
+		.luma())
+	.add(shape(0.054, 0.02)
+		.rotate(0.349, 0.566)
+		.mult(voronoi(1454.717, 0.188)
+			.luma())
+		.rotate(0.503))
+	.scrollX([0.1, -0.111, 0.001, 0], 0.168)
+	.scrollY([0.043, -0.047, 0.007, 0], 0.333)
+	.out();
+      
+    </script>
+
+    <div id="container"></div>
+
+
+    <!-- The footer holds our remix button — you can use it for structure or cut it out 
+    //*<footer class="footer">
+      <div class="links"></div>
+      <a
+        class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+      >
+        <img
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
+        />
+        Remixea en Glitch
+      </a>
+    </footer> -->
+    
+  </body>
+</html>

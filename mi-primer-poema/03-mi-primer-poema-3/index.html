@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>4to poem</title>
+        <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+       <!-- import the latest version of hydra synth-->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <!-- import p5js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+  </head>  
+  <body>
+  
+    <h1><a href="../04-mi-primer-poema-4/index.html"> <marquee direction="up" height="100%" width="100%">
+      <center>mi primer poema<br>
+      como todo buen primer poema<br>
+      sería un regalo<br>
+      para un chico<br>
+      que me besó en un baño<br>
+      y yo enamorada<br>
+      muy muy enamorada<br>
+      le dije que escribí <br> 
+      unas cuantas líneas <br> 
+      en el muro de mi cuarto<br>
+      que quería mostrarle<br>
+      la luz que escondo<br> 
+      en el fondo de mi closet<br>
+      y subiríamos a buscar <br> 
+      alguna luz<br> esa luz<br> 
+      una luz <br> que claramente <br> nunca pudimos encontrar<br>
+      </center>
+</marquee></a></h1>  
+  <!-- create hydra canvas here -->
+  <canvas id="myCanvas"></canvas>
+   
+  <!--aqui dentro del script el codigo de Hydra -->  
+  <script>    
+        var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      })
+noise(20)
+	.colorama(5)
+	.posterize(2)
+	.kaleid(50)
+	.mask(shape(25, 0.25)
+		.modulateScale(noise(400.5, 20)))
+	.mask(shape(400, 1, 2.125))
+	.modulateScale(osc(6, 0.125, 0.05)
+		.kaleid(50))
+	.mult(osc(20, 0.05, 2.4)
+		.kaleid(50), 0.357)
+	.scale(1.75, 0.65, 0.5)
+	.modulate(noise(0.5))
+	.saturate(10)
+	.posterize(4, 0.2)
+	.scale(1.5)
+	.out();
+
+    
+    </script>
+    
+  </body>
+</html>

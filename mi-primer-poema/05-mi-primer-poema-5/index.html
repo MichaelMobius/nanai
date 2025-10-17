@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+    <!--<script src="pet_cursor.js"></script>	-->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>il primo poem</title>
+  </head>  
+
+  <body>
+    <h1> (?) mi primer poema (?) </h1>
+    
+    <div class="w3-container"><center>
+      <p><button class="w3-button w3-red" onclick="colorRain()">como todo buen<br>primer poema</button></p>
+      <p><button class="w3-button w3-pink" onclick="cuadradito()" >no fue un poema</button></p>
+      <p><button class="w3-button w3-purple" onclick="cuadraditoDos()">porque un poema<br>no es un poema</button></p>
+      <p><button class="w3-button w3-deep-purple" onclick="cuadraditoTres()">porque un <br>primer poema<br>es todo</button></p>
+      <p><button class="w3-button w3-indigo" onclick="silencio()">menos un<br>primer poema</button></p>
+      <p><button class="w3-button w3-blue"><a href="../06-mi-primer-poema-6/index.html">porque<br>un poema es... </a></button></p>
+      </center>
+
+    </div>
+    
+    <iframe style="display:none" id="frame" width="1920" height="1080" frameborder="0"></iframe>
+    <!-- <iframe src="https://hydra.ojack.xyz/?sketch_id=XIjXr5wspR5aFHwF" width="600" height="600" frameborder="0"></iframe>-->
+    <canvas id="myCanvas" width="1920" height="1080" ></canvas>
+    
+    <script>
+      // create a new hydra-synth instance
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      })
+      osc(107, 0, 0.7).color(1, 0, 1).rotate(0, -0.08).modulateRotate(o1, 0.4).out(o0)
+osc(33).rotate(2, 0.8).modulateRotate(o0, () => (a.fft[0]*2)).out(o1)
+
+      function colorRain() {
+//Pixelscape
+//Marianne Teixido
+//https://github.com/MarianneTeixido
+
+        src(o0)
+         .saturate(1.01)
+         .scale(.999)
+         .color(1.01,1.01,1.01)
+         .hue(.01)
+         .modulateHue(src(o1).hue(.3).posterize(-1).contrast(.7),2)
+          .layer(src(o1)
+                 .luma()
+                 .mult(gradient(1)
+                       .saturate(.9)))
+          .out(o0)
+
+        noise(1, .2)
+          .rotate(2,.5)
+          .layer(src(o0)
+          .scrollX(.2))
+          .out(o1)
+
+        render(o0)
+              }
+      
+      function cuadradito() {
+        src(o0)
+        .repeat()
+        .layer(osc(10, .8, 16.179)
+          .mask(shape(4.399)))
+        .out();
+      }
+      
+       function cuadraditoDos() {
+        voronoi(350,0.15)
+        .modulateScale(osc(8).rotate(Math.sin(time)),.5)
+        .thresh(.8)
+        .modulateRotate(osc(7),.4)
+        .thresh(.7)
+          .diff(src(o0).scale(1.8))
+        .modulateScale(osc(2).modulateRotate(o0,.74))
+        .diff(src(o0).rotate([-.012,.01,-.002,0]).scrollY(0,[-1/199800,0].fast(0.7)))
+        .brightness([-.02,-.17].smooth().fast(.5))
+        .out()
+      }
+      function cuadraditoTres() {
+        src(o0).repeat()
+        .layer(
+	        osc(10,.8,15).mask(shape(4,.3,1)))
+        .modulateScale(osc(),.2).posterize(10).modulateRotate(src(o0),2,10)
+        .blend(src(o0))
+        //.blend(src(o0))
+        .out()
+        speed = .8
+      }
+      
+       function loadPage(){
+         var frame = $('#frame');
+         var url = "https://tinyurl.com/vmfry5rd";
+         frame.attr('src',url).show();
+     }
+      
+      function silencio() {
+        voronoi(67, 2, 3).thresh(0.7, 0.2)
+        .color(1, 1, 4)
+        .blend(src(o0).scroll(.001,.001))
+        .out(o0)
+        
+      }
+      </script>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+      </body>
+</html>

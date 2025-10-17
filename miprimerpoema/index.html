@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
+
+    <title>𝖒𝖎 𝖕𝖗𝖎𝖒𝖊𝖗 𝖕𝖔𝖊𝖒𝖆</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <!-- P5JS LIBRERIA -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title"><center>𝖒𝖎 𝖕𝖗𝖎𝖒𝖊𝖗 𝖕𝖔𝖊𝖒𝖆</center></h1>
+
+    
+        <div class="instructions">
+
+          <p>
+            Sampleo interdimensional de un poema de dudosa existencia, compilado de hydras y visiones ácidas de la post autoría en una web hipervincular.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+          <!-- <a href="/1uno.html"> sigueinte 1</a> -->
+          <p>
+            <center>- 𝕹𝖆𝖓𝖆𝖎 -</center>
+          </p>
+          <p>
+            <div class="links"></div>
+             <center> <br>
+               <a class="btn--remix" target="_top" href="../mi-primer-poema/01-mi-primer-poema/index.html">𝖒𝖎 𝖕𝖗𝖎𝖒𝖊𝖗 𝖕𝖔𝖊𝖒𝖆</a>
+          </center>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      });
+
+imgEl = document.createElement('img');
+imgEl.crossOrigin = 'anonymous';
+imgEl.src = 'https://media3.giphy.com/media/TfFQC2w3M3VmUpBv9u/giphy.gif'
+
+s0.init({src: imgEl});
+
+src(s0).diff(osc(1, 1.2)).out(o0)
+
+render(o0)
+src(o0)
+	.layer(src(s0)
+		.modulate(noise(0)))
+	.posterize(15,1)
+	.colorama (0)
+	.rotate(1,0.1)
+	.out();
+      
+    </script>
+    <script src="script.js" defer></script>
+    <div id="container"></div>
+
+
+    <!-- The footer holds our remix button — you can use it for structure or cut it out 
+    //*<footer class="footer">
+      <div class="links"></div>
+      <a
+        class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+      >
+        <img
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
+        />
+        Remixea en Glitch
+      </a>
+    </footer> -->
+    
+  </body>
+</html>

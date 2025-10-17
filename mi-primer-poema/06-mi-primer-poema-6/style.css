@@ -1,0 +1,44 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 100;
+  background-color:#a3a3a3;
+}
+
+h1 {
+  font-family: 'Yuji Syuku', serif;
+  font-style: normal;
+  /*color: #DEDEDE;*/
+  font-size:50px;
+  align-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+a:visited {
+  color: #DEDEDE;
+}
+
+a:link {
+  color: #FFEB2E;
+}
+
+a:hover {
+  color: #FFEB2E;
+}
+
+
+
+#myCanvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow-y: hidden;
+  position: fixed;
+  background-size: cover;
+  
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+    <title> dantesco</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+     <script src="https://unpkg.com/hydra-synth"></script>
+    
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+  </head>  
+  <body>
+   
+      <h1>
+        <center>
+          <3
+        </center>
+      </h1>
+        
+        <h2>   
+        <a href="../../the-enddddd/index.html">
+          pero en términos generales<br>
+          mi primer poema<br>
+          como todo buen primer poema<br>
+          fue una carta para nadie<br>
+          un mensaje <br>
+          que ya comienzo a olvidar.</a>
+
+        </h2>
+ 
+   
+    <canvas id="myCanvas" width="1024px" height="768px"></canvas>
+    <script>
+        var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas")
+      })
+imgEl = document.createElement('img');
+imgEl.crossOrigin = 'anonymous';
+imgEl.src = 'https://media3.giphy.com/media/TfFQC2w3M3VmUpBv9u/giphy.gif'
+
+s0.init({src: imgEl});
+
+src(s0).diff(osc(1, 1.2)).out(o0)
+
+render(o0)
+src(o0)
+	.layer(src(s0)
+		.modulate(noise(0.573)))
+	.mult(s0, [0.001, 0.004, 0.204].ease(NaN))
+  .scale([0.095, 0.5, 0.9986].ease(NaN))
+	.diff(gradient(0.212), 0.127)
+	.out();
+    
+    </script>
+  </body>
+</html>

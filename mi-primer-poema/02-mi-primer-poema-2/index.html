@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
+
+    <title>미 프라이머 포메아</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <!-- P5JS LIBRERIA -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title"><center>미 프라이머 포메아</center></h1>
+
+    
+        <div class="instructions">
+          <h2>
+            ¿Entonces me tratas de decir que
+          </h2>
+          <p>
+            mi primer poema
+            como todo buen primer poema/
+            no fue un poema sino una canción/
+            que escribí sobre la palma de la mano/
+            de una chica confundida que creía en algo/
+            que no conocía, pero que decía/
+            que no importaba que le raye la mano/
+            o que le escriba una novela en las yemas de los dedos
+<br /><br />
+            <center><strong>??????????????????????????????</strong></center>
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+          <!-- <a href="/1uno.html"> sigueinte 1</a> -->
+          <p><center>→ <a href="../03-mi-primer-poema-3/index.html">&#x1f47d</a> ←</center></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      });
+
+noise(3,0.3,3).thresh(0.3,0.03).diff(o3,0.3).out(o1)
+gradient([0.3,0.3,3]).diff(o0).blend(o1).out(o3)
+voronoi(33,3,30).rotate(3,0.3,0).modulateScale(o2,0.3).color(-3,3,0).brightness(3).out(o0)
+shape(30,0.3,1).invert(({time})=>Math.sin(time)*3).out(o2)
+
+render(o3)
+      
+    </script>
+
+    <div id="container"></div>
+
+
+    <!-- The footer holds our remix button — you can use it for structure or cut it out 
+    //*<footer class="footer">
+      <div class="links"></div>
+      <a
+        class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+      >
+        <img
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
+        />
+        Remixea en Glitch
+      </a>
+    </footer> -->
+    
+  </body>
+</html>

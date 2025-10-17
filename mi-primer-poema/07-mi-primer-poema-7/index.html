@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hello!</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <!--<script src="p5.js"></script>-->
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="1920px" height="1080px"></canvas>
+
+    <div id="container"></div>
+    <script>
+      let a = 0;
+      let sketch = function(p1) {
+        p1.setup = function() {
+          p1.createCanvas(p1.windowWidth, p1.windowHeight);
+          p1.background(0);
+          s1.init({ src: miP1.canvas });
+        }
+
+
+
+      let miP1 = new p5(sketch, window.document.getElementById("container"));
+    </script>
+    <p>
+       <a id="texto1" href="../08-mi-primer-poema-conclusion/index.html">mi primer poema<br>
+         como todo buen primer poema<br>
+         no fue un poema<br>
+         sino un recordatorio<br>
+         de que el amor es una cosa<br>
+         que los poemas son otra cosa<br>
+         que no contiene ni proyecta<br>
+         el amor que se me escapa de los ojos<br>
+         y se derrama sobre ustedes
+      </a>
+    
+    </p>  
+    
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      });
+
+      document.getElementById("container").style.visibility = "hidden";
+
+      s0.initCam();
+      src(s0)
+        .invert(0.2)
+          .colorama(0.38)
+        .contrast(0.4)
+        .layer(src(o0)
+          .mask(shape(3.201, 2)
+            .scale(0.2, 0.7)
+            .scrollX(0.25))
+          .scrollX(0.001))
+        .modulate(o0, 0.03)
+        .out(o0)
+    </script>
+  </body>
+</html>

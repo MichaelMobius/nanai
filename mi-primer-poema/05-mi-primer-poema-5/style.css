@@ -1,0 +1,42 @@
+/* CSS files add styling rules to your content */
+
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color: #519ca6;
+}
+
+h1 {
+  font-family: 'Ultra', serif !important; 
+  font-size: 70px !important;
+  color: rgb(40, 75, 72 ,.7);
+  border: 2px;
+  text-align: center;
+}
+
+.w3-button {
+  width:150px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+#myCanvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow-y: hidden;
+  /*position: fixed;
+  here is your hydra screenshot (for mobile) */
+  /*background-image: url("https://cdn.glitch.com/ce53ccc1-c5da-4f7f-a871-42eccf910bb6%2Fhydra-2020-9-6-14.51.53.png?v=1599396758507");*/
+ 
+}

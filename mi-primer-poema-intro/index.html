@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sí, me lo samplee</title>
+
+    <!-- tus archivos (déjalos si los usas) -->
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- hydra y p5 -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+
+    <style>
+      html, body { margin:0; height:100%; overflow:hidden; background:#000; }
+      /* Canvas de Hydra como fondo a pantalla completa */
+      #myCanvas{
+        position: fixed;
+        inset: 0;         /* top/right/bottom/left:0 */
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        z-index: 0;       /* al fondo, pero visible */
+      }
+      /* Mantén tu GIF encima */
+      center { position: relative; z-index: 1; }
+    </style>
+  </head>  
+  <body>
+    <br><br><br><br><br><br><br><br><br>
+    <center>
+      <a href="../dantesca/index.html">
+        <img src="https://media1.giphy.com/media/TfFQC2w3M3VmUpBv9u/giphy.gif?cid=790b761131b9ba2b72d1c2b792a4470138d05c449929dd3c&rid=giphy.gif&ct=g" alt="gif">
+      </a>
+    </center>
+
+    <!-- canvas de hydra -->
+    <canvas id="myCanvas"></canvas>
+   
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const hydra = new Hydra({
+        canvas: canvas,
+        detectAudio: false,
+        makeGlobal: true   // asegura osc(), o0, etc. en window
+      });
+
+      // Ajusta tamaño REAL del canvas (no solo CSS) y resolución de Hydra
+      function fitCanvas(){
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width  = Math.round(window.innerWidth  * dpr);
+        canvas.height = Math.round(window.innerHeight * dpr);
+        if (typeof hydra.setResolution === 'function') {
+          hydra.setResolution(canvas.width, canvas.height);
+        }
+      }
+      window.addEventListener('resize', fitCanvas);
+      fitCanvas();
+
+      // tu patch
+      osc(10, 0.2, 0.2)
+        .kaleid([1,2,3,4,5,6,7,8,9])
+        .modulate(o0, () => mouse.x * 0.001)
+        .out();
+    </script>
+  </body>
+</html>
