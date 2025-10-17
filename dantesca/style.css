@@ -1,0 +1,86 @@
+/* CSS files add styling rules to your content */
+:root {
+  --color-bg: #69F7BE;
+  --color-text-main: #000000;
+  --color-primary: #FFFF00;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk";
+}
+
+body {
+  font-family: monospace, sans-serif;
+  margin: 1em;
+  background-color:#03b1fc;
+}
+
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  /*margin: 0 1rem;*/
+  padding: 5em;
+  background-color: rgba(255, 255, 255, 0.75);
+  position: relative;
+  max-width: 615px;
+  width: 100%;
+  margin: auto;
+}
+
+h1 { 
+  font-style: normal;
+  color: #553EF7;
+  font-size: 50px
+
+}  
+h2{
+  font-style: normal;
+  color: #A2FF33;
+  font-size: 30px;
+  margin-left: 10px
+}
+
+a:link {
+  color: #39FF14;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #39FF14;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ed4824;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #ed4824;
+  text-decoration: none;
+}
+
+#myCanvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow-y: hidden;
+  position: fixed;
+  /* here is your hydra screenshot (for mobile) */
+  /*background-image: url("https://i.ibb.co/HqDH62t/cartas.gif");*/
+  background-size: cover;
+}
+
+.centrado{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}

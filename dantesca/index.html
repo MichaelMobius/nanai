@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+    <title> dantesco</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+     <script src="https://unpkg.com/hydra-synth"></script>
+    
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+  </head>  
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+    
+      <h1>
+        <center>
+      мое первое стихотворение
+        </center>
+      </h1>
+        
+        <h2>   
+        <a href="../mi-primer-poema/02-mi-primer-poema-2/index.html">
+          mi primer poema<br>
+          como todo buen primer poema<br>
+          fue una reescritura dantesca<br>
+          para una chica confundida<br>
+          que decía que me amaba<br>
+          que decía que el sol siempre saldría<br>
+          en tanto que su corazón y el mío<br>
+          vayan siempre hacia la tarde</a>
+        </h2>
+      </div>
+    </div>
+      <div id="container"></div>
+ 
+   
+    <canvas id="myCanvas" width="1024px" height="768px"></canvas>
+    <script>
+        var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas")
+      })
+osc(40,0.2,1)
+  .modulateScale(osc(40,0,1).kaleid(8))
+  .repeat(2,4)
+  .modulate(o0,0.05)
+  .modulateKaleid(shape(4,0.1,1))
+  .out(o0)
+    
+    </script>
+  </body>
+</html>

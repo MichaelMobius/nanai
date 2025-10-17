@@ -1,0 +1,33 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color: #fbff0f;
+  background-image: url('https://media.giphy.com/media/26xBHklzttKHVB7bO/giphy.gif');
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'DotGothic16', sans-serif;
+  color: #f542f5;
+  margin: 2em;
+  padding:2px;
+  background-color: rgba(12, 113, 247, 0.75);
+}
+
+a:hover {
+  /* jue jue jue*/
+  background-color: red;
+}
+
+.container{
+display: flex; 
+}
+
+
+.especial h1{
+  font-family: 'DotGothic16', sans-serif;
+  margin: 25px 50px 10px 300px; 
+  background-color: rgba(12, 113, 247, 0);
+}

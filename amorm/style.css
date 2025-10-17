@@ -1,0 +1,58 @@
+/* CSS files add styling rules to your content */
+.contenedor {
+  background: #00000; 
+  width: 50%
+  max-width: 800px;
+  height: 600px;
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+    
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: Times New Roman;
+  background-color: #000000;
+  background-image: url('https://media.giphy.com/media/U5ViEdwVOn0dmDtcMV/giphy.gif');
+  text-align: justify;
+}
+
+h1 {
+  font-family: 'Yuji Syuku', serif;
+  font-style: normal;
+  /*color: #DEDEDE;*/
+  font-size:50px;
+  align-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+a:visited {
+  color: #DEDEDE;
+}
+
+a:link {
+  color: #39FF14;
+}
+
+a:hover {
+  color: #39FF14;
+}
+
+
+
+#myCanvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow-y: hidden;
+  position: fixed;
+  background-size: cover;
+  
+}

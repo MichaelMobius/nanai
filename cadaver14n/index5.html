@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> ♥ </title>
+        <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+       <!-- import the latest version of hydra synth-->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <!-- import p5js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+  </head>  
+  <body>
+    <div class="contenedor">
+    <main>
+          <h3>
+                        <p><a href="index1.html">
+                          impotencia que conjuro con estos textos que como sabes
+                          repito como mantra como conjuro como medicamento inútil
+                          las estrellas han muerto en las torres brillantes en el asfalto
+                          entre los pisos mojados en la lluvia y el sol rojo de la tarde
+                          bajo las sábanas y en tus poros expandiéndose las estrellas
+                          han muerto sin brillo con mocos y babas las estrellas han
+                          muerto del tamaño de tu <u>corazón</u> de tu respiración de tus
+                          rodillas tocando el límite en tus manos</a>
+                        </p>
+            <center>
+                    <audio autoplay controls>
+                      <source src="https://cdn.glitch.global/910e4cfd-15d5-4e69-987b-2686e66b263f/Lo%20han%20matado.mp3?v=1656018570634" type="audio/ogg"><br> <br>
+                    </audio>
+                  </center>
+           </h3>
+    
+      
+      
+      <section class="dreams">
+        <ul id="dreams"></ul>
+      </section>
+    </main>  
+    </div>
+  <!-- create hydra canvas here -->
+  <canvas id="myCanvas"></canvas>
+   
+  <!--aqui dentro del script el codigo de Hydra -->  
+ <script>
+        var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas")
+      })
+shape(4,0.5,0)
+.modulate(noise(100,0.3).pixelate(250,150).scrollY(0,-0.1),0.8)
+.color(1,2.6,3)
+.modulateScale(gradient().r(2),-0.6)
+.modulateScale(osc(3,0).thresh(0.1,0.5),0.95)
+.add(src(o0).scrollY(-0.01).color(9,0,0),0.95).out()
+    
+    </script>
+    
+  </body>
+</html>
