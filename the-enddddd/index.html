@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
+
+    <title>the end (?) </title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <!-- P5JS LIBRERIA -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        
+            
+        <div class="instructions">
+
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+          <!-- <a href="/1uno.html"> sigueinte 1</a> -->
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      });
+
+      src(o0)
+	.layer(src(s0)
+		.modulate(noise(0.573)))
+	.hue(0.493)
+	.mult(s0, [0.001, 0.004, 0.204].ease(NaN))
+	.scale([0.095, 1.47, 0.9986].ease(NaN))
+	.diff(gradient(0.212), 0.127)
+	.out();
+      
+    </script>
+
+    <div id="container"></div>
+    <script>
+      let sketch = function(p) {
+        p.setup = function() {
+          p.createCanvas(p.windowWidth, p.windowHeight);
+          p.background("rgba(0%,0%,0%,0)");
+          p.frameRate(1);
+          textArray = [
+            "pero sí",
+            "en términos",
+            "generales",
+            "mi primer",
+            "poema",
+            "como todo",
+            "buen primer poema",
+            "fue una carta",
+            "para nadie",
+            "un mensaje",
+            "que ya",
+            "comienzo",
+            "a olvidar.",
+            
+          ];
+        };
+
+        p.draw = function() {
+          p.clear()
+          p.stroke(
+            p.random(155, 255),
+            p.random(155, 255),
+            p.random(155, 255),
+            p.random(255)
+          );
+          p.fill(
+            p.random(155, 255),
+            p.random(155, 255),
+            p.random(155, 255),
+            p.random(255)
+          );
+          p.strokeWeight(p.random(1, 10));
+          p.textSize(p.random(50, 50));
+          index = Math.floor(time % textArray.length);
+          p.text(textArray[index], p.random(width), p.random(height));
+        s0.init({ src:p.canvas });
+        };
+      };
+      new p5(sketch, window.document.getElementById("container"));
+    </script>
+        
+
+    <!-- The footer holds our remix button — you can use it for structure or cut it out 
+    //*<footer class="footer">
+      <div class="links"></div>
+      <a
+        class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+      >
+        <img
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
+        />
+        Remixea en Glitch
+      </a>
+    </footer> -->
+    
+  </body>
+</html>
