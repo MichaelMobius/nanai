@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>nanai</title>
+        <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+       <!-- import the latest version of hydra synth-->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <!-- import p5js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+  </head>  
+  <body>
+    
+    <div class="contenedor">
+      <h2>
+        <a href="wasi.html">
+            <center>
+              <img src="https://cdn.glitch.global/089c930f-d15e-4322-b825-850e7f3de73f/png%20blanco.png?v=1662773305023" height="150"><br>
+              nanai
+            </center>
+        </a>
+      </h2>
+    
+    </div>
+  <!-- create hydra canvas here -->
+  <canvas id="myCanvas"></canvas>
+      
+  <script>    
+        var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      })
+        
+        src(o0).blend(
+shape(5,0.001,.75).mult(osc(2,.15,1.75))
+ .modulateScrollY(osc(100, .25, 0).pixelate(),0.01)
+ .modulateScrollY(osc(10, .5, 0).pixelate(),0.05)
+ .modulateScrollX(osc(100, .125, 0).pixelate(),0.1)
+ .modulateScrollX(osc(10, .35, 0).pixelate(),0.5)
+ .modulateScrollX(osc(100, .25, 0).rotate(.5).pixelate(),0.01)
+  .scale(1.5)
+  ,0.0125
+  )
+  .scrollX(0.0001)
+  .modulateHue(src(o0),100)
+.contrast(1.0025)
+.out()
+src(o1) .blend(osc(100, 0.5, 1.75)
+  .modulateScrollX(osc(100, () => Math.sin(time * 0.1) * 0.5, 0)
+   .modulate(noise()
+    , 0.01))
+           , 0.025)
+ .modulateScrollY(osc(100, .25, 0).pixelate(),0.001)
+ .modulateScrollY(osc(10, .5, 0).pixelate(),0.005)
+.contrast(1.025)
+.out(o1)
+  
+    
+    </script>  
+
+    
+  </body>
+</html>
